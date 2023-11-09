@@ -2,14 +2,12 @@
 # -*- coding: utf-8 -*-
 
 def main(inp: str) -> int:
-    eng_vowels_set = {'a', 'e', 'i', 'o', 'u', 'y'}
-    ru_vowels_set = {'а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'}
+    vowels_set = set("aeiouyаеёиоуыэюя")
+    set_inp = set(inp)
 
-    vowels_count: int = 0
-    for letter in inp:
-        if letter.lower() in eng_vowels_set or letter.lower() in ru_vowels_set:
-            vowels_count += 1
+    vowels_count: int = len(set_inp.intersection(vowels_set))
     return vowels_count
+    
 
 
 if __name__ == "__main__":
